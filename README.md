@@ -31,7 +31,6 @@ $ npm test
 ## Built With
 
 - React
-- Webpack
 - JavaScript
 - CSS
 
