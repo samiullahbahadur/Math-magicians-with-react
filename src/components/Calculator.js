@@ -1,24 +1,26 @@
-import { string } from "prop-types";
 import { useState, useEffect } from "react";
+import NumberFormat from "react-number-format";
 
 function Calculator() {
   const [preState, setPreState] = useState("");
   const [curState, setCurState] = useState("");
   const [input, setInput] = useState("0");
-  const [operation, setOperation] = useState("null");
-  const [total, setTotal] = useState("false");
+  const [operator, setOperator] = useState(null);
+  const [total, setTotal] = useState(false);
 
-  // input numbers
   const inputNum = (e) => {
     if (curState.includes(".") && e.target.innerText === ".") return;
+
     if (total) {
       setPreState("");
     }
+
     curState
       ? setCurState((pre) => pre + e.target.innerText)
       : setCurState(e.target.innerText);
     setTotal(false);
   };
+
   useEffect(() => {
     setInput(curState);
   }, [curState]);
@@ -26,40 +28,37 @@ function Calculator() {
   useEffect(() => {
     setInput("0");
   }, []);
-
-  // select operand
-  const operationType = (e) => {
+  const operatorType = (e) => {
     setTotal(false);
-    setOperation(e.target.innerText);
+    setOperator(e.target.innerText);
     if (curState === "") return;
     if (preState !== "") {
       equals();
+    } else {
+      setPreState(curState);
+      setCurState("");
     }
-    setPreState(curState);
-    setCurState("");
   };
 
-  // Equals operation
   const equals = (e) => {
     if (e?.target.innerText === "=") {
       setTotal(true);
     }
-
     let cal;
-    switch (operation) {
-      case "÷":
-        cal = string(parseFloat(preState) / parseFloat(curState));
+    switch (operator) {
+      case "/":
+        cal = String(parseFloat(preState) / parseFloat(curState));
         break;
-      case "x":
-        cal = string(parseFloat(preState) * parseFloat(curState));
-        break;
+
       case "+":
-        cal = string(parseFloat(preState) + parseFloat(curState));
+        cal = String(parseFloat(preState) + parseFloat(curState));
+        break;
+      case "X":
+        cal = String(parseFloat(preState) * parseFloat(curState));
         break;
       case "-":
-        cal = string(parseFloat(preState) - parseFloat(curState));
+        cal = String(parseFloat(preState) - parseFloat(curState));
         break;
-
       default:
         return;
     }
@@ -67,10 +66,21 @@ function Calculator() {
     setPreState(cal);
     setCurState("");
   };
-  const minusPlas = () => {};
-  const percent = () => {};
 
-  // reset operation
+  const minusPlus = () => {
+    if (curState.charAt(0) === "-") {
+      setCurState(curState.substring(1));
+    } else {
+      setCurState(`-${curState}`);
+    }
+  };
+
+  const percent = () => {
+    preState
+      ? setCurState(String((parseFloat(curState) / 100) * preState))
+      : setCurState(String(parseFloat(curState) / 100));
+  };
+
   const reset = () => {
     setPreState("");
     setCurState("");
@@ -79,7 +89,17 @@ function Calculator() {
   return (
     <div className="container">
       <div className="wrapper">
-        <div className="screen">{input}</div>
+        <div className="screen">
+          {input !== "" || input === "0" ? (
+            <NumberFormat value={input} displayType="text" thousandSeparator />
+          ) : (
+            <NumberFormat
+              value={preState}
+              displayType="text"
+              thousandSeparator
+            />
+          )}
+        </div>
 
         <div className="btn light-gray" onClick={reset}>
           AC
