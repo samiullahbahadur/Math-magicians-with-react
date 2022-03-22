@@ -8,10 +8,10 @@ body {
   background-color: burlywood;
   display: grid;
   place-content: center;
-  font-family: "Roboto,san-serif";
   height: 100vh;
   font-size: 1.2rem;
 }
+
 .container {
   height: 60vh;
   width: 50vh;
@@ -40,6 +40,7 @@ body {
   padding-top: 12px;
   padding-right: 2px;
 }
+
 .btn {
   display: grid;
   place-content: center;
@@ -59,9 +60,11 @@ body {
   border-bottom: 1px solid gray;
   border-right: none;
 }
+
 .row1 {
   border: none;
 }
+
 .zero {
   grid-column: 1 / span 2;
   border-bottom: none;
