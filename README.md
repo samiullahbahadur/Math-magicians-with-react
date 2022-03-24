@@ -69,7 +69,7 @@ This should open the page in your localhost on port 3000. then you'd be able to 
 
 Feel free to check the [issues page](../../issues/).
 
-## Authors
+
 
 👤 **Author1**
 
