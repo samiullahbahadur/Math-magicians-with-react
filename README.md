@@ -69,8 +69,6 @@ This should open the page in your localhost on port 3000. then you'd be able to 
 
 Feel free to check the [issues page](../../issues/).
 
-
-
 👤 **Author1**
 
 - GitHub: [@Bahadur](https://github.com/samiullahbahadur)
