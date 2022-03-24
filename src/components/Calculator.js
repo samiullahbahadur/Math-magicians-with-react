@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import NumberFormat from 'react-number-format';
+import React, { useState, useEffect } from "react";
+import NumberFormat from "react-number-format";
 
-function Calculator() {
-  const [preState, setPreState] = useState('');
-  const [curState, setCurState] = useState('');
-  const [input, setInput] = useState('0');
+const Calculator = () => {
+  const [preState, setPreState] = useState("");
+  const [curState, setCurState] = useState("");
+  const [input, setInput] = useState("0");
   const [operator, setOperator] = useState(null);
   const [total, setTotal] = useState(false);
 
   const inputNum = (e) => {
-    if (curState.includes('.') && e.target.innerText === '.') return;
+    if (curState.includes(".") && e.target.innerText === ".") return;
 
     if (total) {
-      setPreState('');
+      setPreState("");
     }
     if (curState) {
       setCurState((pre) => pre + e.target.innerText);
@@ -27,52 +27,52 @@ function Calculator() {
   }, [curState]);
 
   useEffect(() => {
-    setInput('0');
+    setInput("0");
   }, []);
 
   // equals
 
   const equals = (e) => {
-    if (e?.target.innerText === '=') {
+    if (e?.target.innerText === "=") {
       setTotal(true);
     }
     let cal;
     switch (operator) {
-      case '÷':
+      case "÷":
         cal = String(parseFloat(preState) / parseFloat(curState));
         break;
 
-      case '+':
+      case "+":
         cal = String(parseFloat(preState) + parseFloat(curState));
         break;
-      case 'X':
+      case "X":
         cal = String(parseFloat(preState) * parseFloat(curState));
         break;
-      case '-':
+      case "-":
         cal = String(parseFloat(preState) - parseFloat(curState));
         break;
       default:
         return;
     }
-    setInput('');
+    setInput("");
     setPreState(cal);
-    setCurState('');
+    setCurState("");
   };
 
   const operatorType = (e) => {
     setTotal(false);
     setOperator(e.target.innerText);
-    if (curState === '') return;
-    if (preState !== '') {
+    if (curState === "") return;
+    if (preState !== "") {
       equals();
     } else {
       setPreState(curState);
-      setCurState('');
+      setCurState("");
     }
   };
 
   const minusPlus = () => {
-    if (curState.charAt(0) === '-') {
+    if (curState.charAt(0) === "-") {
       setCurState(curState.substring(1));
     } else {
       setCurState(`-${curState}`);
@@ -88,16 +88,16 @@ function Calculator() {
   };
 
   const reset = () => {
-    setInput('0');
-    setPreState('');
-    setCurState('');
+    setInput("0");
+    setPreState("");
+    setCurState("");
   };
 
   return (
     <div className="container">
       <div className="wrapper">
         <div className="screen">
-          {input !== '' || input === '0' ? (
+          {input !== "" || input === "0" ? (
             <NumberFormat value={input} displayType="text" thousandSeparator />
           ) : (
             <NumberFormat
@@ -114,7 +114,7 @@ function Calculator() {
         <button type="button" className="btn light-gray" onClick={minusPlus}>
           +/-
         </button>
-        <button type="button" className="btn light-gray row" onClick={percent}>
+        <button type="button" className="btn light-gray" onClick={percent}>
           %
         </button>
         <button type="button" className="btn orange" onClick={operatorType}>
@@ -126,7 +126,7 @@ function Calculator() {
         <button type="button" className="btn" onClick={inputNum}>
           8
         </button>
-        <button type="button" className="btn row" onClick={inputNum}>
+        <button type="button" className="btn " onClick={inputNum}>
           9
         </button>
         <button type="button" className="btn orange" onClick={operatorType}>
@@ -138,7 +138,7 @@ function Calculator() {
         <button type="button" className="btn" onClick={inputNum}>
           5
         </button>
-        <button type="button" className="btn row" onClick={inputNum}>
+        <button type="button" className="btn " onClick={inputNum}>
           6
         </button>
         <button type="button" className="btn orange" onClick={operatorType}>
@@ -150,7 +150,7 @@ function Calculator() {
         <button type="button" className="btn" onClick={inputNum}>
           2
         </button>
-        <button type="button" className="btn row" onClick={inputNum}>
+        <button type="button" className="btn " onClick={inputNum}>
           3
         </button>
         <button type="button" className="btn orange" onClick={operatorType}>
@@ -159,7 +159,7 @@ function Calculator() {
         <button type="button" className="btn zero" onClick={inputNum}>
           0
         </button>
-        <button type="button" className="btn row1" onClick={inputNum}>
+        <button type="button" className="btn " onClick={inputNum}>
           .
         </button>
         <button type="button" className="btn orange" onClick={equals}>
@@ -168,6 +168,6 @@ function Calculator() {
       </div>
     </div>
   );
-}
+};
 
 export default Calculator;
