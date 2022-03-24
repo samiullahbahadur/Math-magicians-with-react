@@ -1,59 +1,174 @@
-import React from 'react';
-import calculate from '../logic/calculate';
-import Button from './Button';
+import React, { Component } from "react";
+import { useState, useEffect } from "react";
+import NumberFormat from "react-number-format";
 
-class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      calcObj: {
-        total: null,
-        next: null,
-        operation: null,
-      },
-    };
-    this.onClick = this.onClick.bind(this);
-  }
+function Calculator() {
+  const [preState, setPreState] = useState("");
+  const [curState, setCurState] = useState("");
+  const [input, setInput] = useState("0");
+  const [operator, setOperator] = useState(null);
+  const [total, setTotal] = useState(false);
 
-  onClick(buttonName) {
-    const { calcObj } = this.state;
-    const newCalcObj = { ...calcObj, ...calculate(calcObj, buttonName) };
-    this.setState({
-      calcObj: newCalcObj,
-    });
-  }
+  const inputNum = (e) => {
+    if (curState.includes(".") && e.target.innerText === ".") return;
 
-  render() {
-    const { calcObj } = this.state;
-    const result = calcObj.next || calcObj.total;
-    return (
+    if (total) {
+      setPreState("");
+    }
+    if (curState) {
+      setCurState((pre) => pre + e.target.innerText);
+    } else {
+      setCurState(e.target.innerText);
+      setTotal(false);
+    }
+  };
 
-      <div className="calculator-wrapper">
-        <div className="result-section">
-          {Number(result)}
+  useEffect(() => {
+    setInput(curState);
+  }, [curState]);
+
+  useEffect(() => {
+    setInput("0");
+  }, []);
+
+  // equals
+
+  const equals = (e) => {
+    if (e?.target.innerText === "=") {
+      setTotal(true);
+    }
+    let cal;
+    switch (operator) {
+      case "÷":
+        cal = String(parseFloat(preState) / parseFloat(curState));
+        break;
+
+      case "+":
+        cal = String(parseFloat(preState) + parseFloat(curState));
+        break;
+      case "X":
+        cal = String(parseFloat(preState) * parseFloat(curState));
+        break;
+      case "-":
+        cal = String(parseFloat(preState) - parseFloat(curState));
+        break;
+      default:
+        return;
+    }
+    setInput("");
+    setPreState(cal);
+    setCurState("");
+  };
+
+  const operatorType = (e) => {
+    setTotal(false);
+    setOperator(e.target.innerText);
+    if (curState === "") return;
+    if (preState !== "") {
+      equals();
+    } else {
+      setPreState(curState);
+      setCurState("");
+    }
+  };
+
+  const minusPlus = () => {
+    if (curState.charAt(0) === "-") {
+      setCurState(curState.substring(1));
+    } else {
+      setCurState(`-${curState}`);
+    }
+  };
+
+  const percent = () => {
+    if (preState) {
+      setCurState(String((parseFloat(curState) / 100) * preState));
+    } else {
+      setCurState(String(parseFloat(curState) / 100));
+    }
+  };
+
+  const reset = () => {
+    setPreState("");
+    setCurState("");
+    setInput("0");
+  };
+
+  return (
+    <div className="container">
+      <div className="wrapper">
+        <div className="screen">
+          {input !== "" || input === "0" ? (
+            <NumberFormat value={input} displayType="text" thousandSeparator />
+          ) : (
+            <NumberFormat
+              value={preState}
+              displayType="text"
+              thousandSeparator
+            />
+          )}
         </div>
-        <Button value="AC" onClick={this.onClick} />
-        <Button value="+/-" onClick={this.onClick} />
-        <Button value="%" onClick={this.onClick} />
-        <Button value="÷" onClick={this.onClick} />
-        <Button value="7" onClick={this.onClick} />
-        <Button value="8" onClick={this.onClick} />
-        <Button value="9" onClick={this.onClick} />
-        <Button value="x" onClick={this.onClick} />
-        <Button value="4" onClick={this.onClick} />
-        <Button value="5" onClick={this.onClick} />
-        <Button value="6" onClick={this.onClick} />
-        <Button value="-" onClick={this.onClick} />
-        <Button value="1" onClick={this.onClick} />
-        <Button value="2" onClick={this.onClick} />
-        <Button value="3" onClick={this.onClick} />
-        <Button value="+" onClick={this.onClick} />
-        <Button value="0" onClick={this.onClick} />
-        <Button value="." onClick={this.onClick} />
-        <Button value="=" onClick={this.onClick} />
+
+        <button type="button" className="btn light-gray" onClick={reset}>
+          AC
+        </button>
+        <button type="button" className="btn light-gray" onClick={minusPlus}>
+          +/-
+        </button>
+        <button type="button" className="btn light-gray row" onClick={percent}>
+          %
+        </button>
+        <button type="button" className="btn orange" onClick={operatorType}>
+          ÷
+        </button>
+        <button type="button" lassName="btn" onClick={inputNum}>
+          7
+        </button>
+        <button type="button" className="btn" onClick={inputNum}>
+          8
+        </button>
+        <button type="button" className="btn row" onClick={inputNum}>
+          9
+        </button>
+        <button type="button" className="btn orange" onClick={operatorType}>
+          X
+        </button>
+        <button type="button" className="btn" onClick={inputNum}>
+          4
+        </button>
+        <button type="button" className="btn" onClick={inputNum}>
+          5
+        </button>
+        <button type="button" lassName="btn row" onClick={inputNum}>
+          6
+        </button>
+        <button type="button" lassName="btn orange" onClick={operatorType}>
+          -
+        </button>
+        <button type="button" className="btn" onClick={inputNum}>
+          1
+        </button>
+        <button type="button" className="btn" onClick={inputNum}>
+          2
+        </button>
+        <button type="button" className="btn row" onClick={inputNum}>
+          3
+        </button>
+        <button type="button" className="btn orange" onClick={operatorType}>
+          +
+        </button>
+        <button type="button" className="btn zero" onClick={inputNum}>
+          0
+        </button>
+        <button type="button" className="btn row1" onClick={inputNum}>
+          .
+        </button>
+        <button type="button" className="btn orange" onClick={equals}>
+          =
+        </button>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Calculator;
