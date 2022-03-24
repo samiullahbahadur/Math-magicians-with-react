@@ -1,19 +1,18 @@
-import React, { Component } from "react";
-import { useState, useEffect } from "react";
-import NumberFormat from "react-number-format";
+import React, { useState, useEffect } from 'react';
+import NumberFormat from 'react-number-format';
 
 function Calculator() {
-  const [preState, setPreState] = useState("");
-  const [curState, setCurState] = useState("");
-  const [input, setInput] = useState("0");
+  const [preState, setPreState] = useState('');
+  const [curState, setCurState] = useState('');
+  const [input, setInput] = useState('0');
   const [operator, setOperator] = useState(null);
   const [total, setTotal] = useState(false);
 
   const inputNum = (e) => {
-    if (curState.includes(".") && e.target.innerText === ".") return;
+    if (curState.includes('.') && e.target.innerText === '.') return;
 
     if (total) {
-      setPreState("");
+      setPreState('');
     }
     if (curState) {
       setCurState((pre) => pre + e.target.innerText);
@@ -28,52 +27,52 @@ function Calculator() {
   }, [curState]);
 
   useEffect(() => {
-    setInput("0");
+    setInput('0');
   }, []);
 
   // equals
 
   const equals = (e) => {
-    if (e?.target.innerText === "=") {
+    if (e?.target.innerText === '=') {
       setTotal(true);
     }
     let cal;
     switch (operator) {
-      case "÷":
+      case '÷':
         cal = String(parseFloat(preState) / parseFloat(curState));
         break;
 
-      case "+":
+      case '+':
         cal = String(parseFloat(preState) + parseFloat(curState));
         break;
-      case "X":
+      case 'X':
         cal = String(parseFloat(preState) * parseFloat(curState));
         break;
-      case "-":
+      case '-':
         cal = String(parseFloat(preState) - parseFloat(curState));
         break;
       default:
         return;
     }
-    setInput("");
+    setInput('');
     setPreState(cal);
-    setCurState("");
+    setCurState('');
   };
 
   const operatorType = (e) => {
     setTotal(false);
     setOperator(e.target.innerText);
-    if (curState === "") return;
-    if (preState !== "") {
+    if (curState === '') return;
+    if (preState !== '') {
       equals();
     } else {
       setPreState(curState);
-      setCurState("");
+      setCurState('');
     }
   };
 
   const minusPlus = () => {
-    if (curState.charAt(0) === "-") {
+    if (curState.charAt(0) === '-') {
       setCurState(curState.substring(1));
     } else {
       setCurState(`-${curState}`);
@@ -89,16 +88,16 @@ function Calculator() {
   };
 
   const reset = () => {
-    setPreState("");
-    setCurState("");
-    setInput("0");
+    setInput('0');
+    setPreState('');
+    setCurState('');
   };
 
   return (
     <div className="container">
       <div className="wrapper">
         <div className="screen">
-          {input !== "" || input === "0" ? (
+          {input !== '' || input === '0' ? (
             <NumberFormat value={input} displayType="text" thousandSeparator />
           ) : (
             <NumberFormat
@@ -121,7 +120,7 @@ function Calculator() {
         <button type="button" className="btn orange" onClick={operatorType}>
           ÷
         </button>
-        <button type="button" lassName="btn" onClick={inputNum}>
+        <button type="button" className="btn" onClick={inputNum}>
           7
         </button>
         <button type="button" className="btn" onClick={inputNum}>
@@ -139,10 +138,10 @@ function Calculator() {
         <button type="button" className="btn" onClick={inputNum}>
           5
         </button>
-        <button type="button" lassName="btn row" onClick={inputNum}>
+        <button type="button" className="btn row" onClick={inputNum}>
           6
         </button>
-        <button type="button" lassName="btn orange" onClick={operatorType}>
+        <button type="button" className="btn orange" onClick={operatorType}>
           -
         </button>
         <button type="button" className="btn" onClick={inputNum}>
