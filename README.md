@@ -4,8 +4,8 @@
 
 ![screenshot](./Images/Screen-shoot-3.PNG)
 
-Our goal here is to Build a single page web application for mathematics weebs using the React library 
-Click [here](https://abenezer-tilahun.github.io/Math-Magicians/) to get a live preview of the project
+Our goal here is to Build a single page web application for mathematics weebs using the React library
+Click [here](https://github.com/samiullahbahadur/Math-magicians/) to get a live preview of the project
 
 ### Features implemented so far are:
 
@@ -32,30 +32,37 @@ The basic requirements for building the executable are:
 #### Cloning the project
 
 ```
-git clone  https://github.com/Abenezer-Tilahun/Math-Magicians.git <Your-Build-Directory>
+git clone  git@github.com:samiullahbahadur/Math-magicians.git <Your-Build-Directory>
 ```
 
 ## Getting packages and dependencies
+
 To get all package modules required to build the project run:
+
 ```
 npm install
 ```
+
 every package module required to build the project is listed in the package.json file. this is used as a reference to get all dependencies.
 
-## Building 
+## Building
 
 To build the project run:
+
 ```
 npm run build
 ```
-after you run this sucessfully you'd locate the build from in the ```build``` folder located from the parent directory of the project.
+
+after you run this sucessfully you'd locate the build from in the `build` folder located from the parent directory of the project.
 
 ## Running
 
 To run the program on a browser through a server run this command in your cli
+
 ```
 npm start
 ```
+
 This should open the page in your localhost on port 3000. then you'd be able to view the built page generated using webpack.
 
 ## 🤝 Contributing
@@ -66,10 +73,9 @@ Feel free to check the [issues page](../../issues/).
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/Abenezer-Tilahun)
-- Twitter: [@twitterhandle](https://twitter.com/AbenezerTilah11)
-- LinkedIn: [LinkedIn](linkedin.com/in/abenezer-tilahun-4b4b43137)
-
+- GitHub: [@Bahadur](https://github.com/samiullahbahadur)
+- Twitter: [@Bahadur](https://twitter.com/Samiull88496331)
+- LinkedIn: [Bahadur](https://www.linkedin.com/in/samiullah-bahadur-a1b053149/)
 
 ## Show your support
 
