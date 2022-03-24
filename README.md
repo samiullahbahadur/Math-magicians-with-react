@@ -71,9 +71,9 @@ Feel free to check the [issues page](../../issues/).
 
 👤 **Author1**
 
-- GitHub: [@Bahadur](https://github.com/samiullahbahadur)
-- Twitter: [@Bahadur](https://twitter.com/Samiull88496331)
-- LinkedIn: [Bahadur](https://www.linkedin.com/in/samiullah-bahadur-a1b053149/)
+- GitHub: [@Samiullah Bahadur](https://github.com/samiullahbahadur)
+- Twitter: [@Samiullah Bahadur](https://twitter.com/Samiull88496331)
+- LinkedIn: [@Samiullah Bahadur](https://www.linkedin.com/in/samiullah-bahadur-a1b053149/)
 
 ## Show your support
 
