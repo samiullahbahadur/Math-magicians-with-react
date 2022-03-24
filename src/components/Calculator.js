@@ -1,76 +1,56 @@
-import react from 'react';
-import '../App.css';
+import React from 'react';
+import calculate from '../logic/calculate';
+import Button from './Button';
 
-class Calculator extends react.Component {
+class Calculator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      calcObj: {
+        total: null,
+        next: null,
+        operation: null,
+      },
+    };
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick(buttonName) {
+    const { calcObj } = this.state;
+    const newCalcObj = { ...calcObj, ...calculate(calcObj, buttonName) };
+    this.setState({
+      calcObj: newCalcObj,
+    });
   }
 
   render() {
+    const { calcObj } = this.state;
+    const result = calcObj.next || calcObj.total;
     return (
-      <div className="container">
-        <div className="wrapper">
-          <div className="screen">0</div>
 
-          <button type="button" className="btn light-gray">
-            AC
-          </button>
-          <button type="button" className="btn light-gray">
-            +/-
-          </button>
-          <button type="button" className="btn light-gray row">
-            %
-          </button>
-          <button type="button" className="btn orange">
-            ÷
-          </button>
-          <button type="button" className="btn">
-            7
-          </button>
-          <button type="button" className="btn">
-            8
-          </button>
-          <button type="button" className="btn row">
-            9
-          </button>
-          <button type="button" className="btn orange">
-            X
-          </button>
-          <button type="button" className="btn">
-            4
-          </button>
-          <button type="button" className="btn">
-            5
-          </button>
-          <button type="button" className="btn row">
-            6
-          </button>
-          <button type="button" className="btn orange">
-            -
-          </button>
-          <button type="button" className="btn">
-            1
-          </button>
-          <button type="button" className="btn">
-            2
-          </button>
-          <button type="button" className="btn row">
-            3
-          </button>
-          <button type="button" className="btn orange">
-            +
-          </button>
-          <button type="button" className="btn zero">
-            0
-          </button>
-          <button type="button" className="btn row1">
-            .
-          </button>
-          <button type="button" className="btn orange">
-            =
-          </button>
+      <div className="calculator-wrapper">
+        <div className="result-section">
+          {Number(result)}
         </div>
+        <Button value="AC" onClick={this.onClick} />
+        <Button value="+/-" onClick={this.onClick} />
+        <Button value="%" onClick={this.onClick} />
+        <Button value="÷" onClick={this.onClick} />
+        <Button value="7" onClick={this.onClick} />
+        <Button value="8" onClick={this.onClick} />
+        <Button value="9" onClick={this.onClick} />
+        <Button value="x" onClick={this.onClick} />
+        <Button value="4" onClick={this.onClick} />
+        <Button value="5" onClick={this.onClick} />
+        <Button value="6" onClick={this.onClick} />
+        <Button value="-" onClick={this.onClick} />
+        <Button value="1" onClick={this.onClick} />
+        <Button value="2" onClick={this.onClick} />
+        <Button value="3" onClick={this.onClick} />
+        <Button value="+" onClick={this.onClick} />
+        <Button value="0" onClick={this.onClick} />
+        <Button value="." onClick={this.onClick} />
+        <Button value="=" onClick={this.onClick} />
       </div>
     );
   }
