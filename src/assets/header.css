@@ -6,9 +6,11 @@
   width: 100%;
   margin: 10px;
 }
+
 .h1 {
   margin-left: 20px;
 }
+
 .header a {
   font-size: 1.2rem;
   text-decoration: none;
@@ -20,6 +22,7 @@
   gap: 10%;
   margin-right: 10%;
 }
+
 .navigation a {
   color: blue;
   text-decoration: underline;
