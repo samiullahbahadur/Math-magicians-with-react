@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
-import '../assets/header.css';
+import { Link } from "react-router-dom";
+import "../assets/header.css";
 
 const Header = () => (
   <header className="header">
     <Link to="/">
-      <h1>Math Magicians</h1>
+      <h1 className="h1">Math Magicians</h1>
     </Link>
     <nav className="navigation">
       <Link to="/">Home </Link>
