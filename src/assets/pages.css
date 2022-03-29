@@ -1,0 +1,14 @@
+.home {
+  margin: 80px 20px 0 20px;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.qout {
+  margin: 150px 20px 0 20px;
+  font-size: 2.8rem;
+  display: flex;
+  justify-content: center;
+}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import NumberFormat from 'react-number-format';
+import '../assets/App.css';
 
 const Calculator = () => {
   const [preState, setPreState] = useState('');
