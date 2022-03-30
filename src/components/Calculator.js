@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import NumberFormat from 'react-number-format';
+import '../assets/App.css';
 
 const Calculator = () => {
   const [preState, setPreState] = useState('');
@@ -95,6 +96,7 @@ const Calculator = () => {
 
   return (
     <div className="container">
+      <h2 className="calcTitle">  Let`s do some Math! </h2>
       <div className="wrapper">
         <div className="screen">
           {input !== '' || input === '0' ? (

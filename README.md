@@ -65,11 +65,8 @@ npm start
 
 This should open the page in your localhost on port 3000. then you'd be able to view the built page generated using webpack.
 
-## 🤝 Contributing
 
-Feel free to check the [issues page](../../issues/).
-
-👤 **Author1**
+👤 **Author**
 
 - GitHub: [@Samiullah Bahadur](https://github.com/samiullahbahadur)
 - Twitter: [@Samiullah Bahadur](https://twitter.com/Samiull88496331)
