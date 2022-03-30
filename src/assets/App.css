@@ -10,7 +10,11 @@
   width: 100%;
   background-color: white;
 }
-
+.calcTitle{
+  position: absolute;
+  top: 20%;
+  left: 2%;
+}
 .wrapper {
   display: grid;
   position: absolute;

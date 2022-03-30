@@ -96,6 +96,7 @@ const Calculator = () => {
 
   return (
     <div className="container">
+      <h2 className="calcTitle">  Let`s do some Math! </h2>
       <div className="wrapper">
         <div className="screen">
           {input !== '' || input === '0' ? (

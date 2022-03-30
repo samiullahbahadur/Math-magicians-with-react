@@ -4,7 +4,7 @@ import '../assets/header.css';
 const Header = () => (
   <header className="header">
     <Link to="/">
-      <h1 className="h1">Math Magicians</h1>
+      <h1>Math Magicians</h1>
     </Link>
     <nav className="navigation">
       <Link to="/">Home </Link>
@@ -13,5 +13,4 @@ const Header = () => (
     </nav>
   </header>
 );
-
 export default Header;

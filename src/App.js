@@ -15,7 +15,6 @@ class App extends PureComponent {
           <Route path="/" element={<Home className="content" />} />
           <Route path="calculator" element={<Calculator />} />
           <Route path="quote" element={<Quote />} />
-
         </Routes>
       </>
     );
