@@ -4,8 +4,10 @@
 
 ![screenshot](./Images/Screen-shoot-3.PNG)
 
-Our goal here is to Build a single page web application for mathematics weebs using the React library
-Click [here](https://github.com/samiullahbahadur/Math-magicians/) to get a live preview of the project
+## Live Demo
+
+- [Math-magicians](https://calculator-math-magician.netlify.app/).
+
 
 ### Features implemented so far are:
 
