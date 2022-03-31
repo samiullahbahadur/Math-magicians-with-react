@@ -6,7 +6,7 @@
 
 ## Live Demo
 
-- [Math-magicians](https://calculator-math-magician.netlify.app/).
+- [Sive link](https://calculator-math-magician.netlify.app/).
 
 
 ### Features implemented so far are:
