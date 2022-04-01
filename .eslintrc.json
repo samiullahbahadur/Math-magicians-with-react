@@ -19,7 +19,7 @@
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
     "no-shadow": "off",
-    "allowedInvalidRoles": ["text"],
+    "allowedInvalidRoles": "off",
     "ignoreNonDOM": true
   },
   "ignorePatterns": [
