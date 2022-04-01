@@ -1,12 +1,12 @@
-import { render, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
-import NavBar from "../components/NavBar";
+import { render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
+import NavBar from '../components/NavBar';
 
-it("NavBar renders correctly", () => {
+it('NavBar renders correctly', () => {
   render(
     <BrowserRouter>
       <NavBar />
-    </BrowserRouter>
+    </BrowserRouter>,
   );
-  screen.getByText("Math Magicians");
+  screen.getByText('Math Magicians');
 });

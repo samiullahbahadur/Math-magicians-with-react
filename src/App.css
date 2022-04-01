@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat&family=Yusei+Magic&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat&family=Yusei+Magic&display=swap");
 
 body {
-  background-image: url('./images/blue-milky-way-galaxy.jpg');
+  background-image: url("./images/blue-milky-way-galaxy.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -9,13 +9,13 @@ body {
 
 h2,
 h3 {
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
   font-weight: bold;
   font-size: 48px;
 }
 
 p {
-  font-family: 'Caveat', cursive;
+  font-family: "Caveat", cursive;
   font-size: xx-large;
 }
 
@@ -31,14 +31,11 @@ p {
   flex-direction: column;
   width: 500px;
   height: 350px;
-  box-shadow:
-    0 0 60px 30px #fff,
-    0 0 100px 60px #f0f,
-    0 0 100px 90px #0ff;
+  box-shadow: 0 0 60px 30px #fff, 0 0 100px 60px #f0f, 0 0 100px 90px #0ff;
 }
 
 .screen {
-  background-color: #160f54;
+  background-color: gray;
   color: white;
   padding: 4% 3%;
 }
@@ -57,11 +54,11 @@ button {
 }
 
 .orange {
-  background-color: #252e88;
+  background-color: orange;
 }
 
 .gray {
-  background-color: #3b86fd;
+  background-color: lightgray;
 }
 
 #zero {
@@ -77,7 +74,7 @@ nav {
   height: 100px;
   padding: 0 3%;
   border-bottom: solid 0.5px gray;
-  font-family: 'Yusei Magic', sans-serif;
+  font-family: "Yusei Magic", sans-serif;
   font-size: larger;
 }
 
