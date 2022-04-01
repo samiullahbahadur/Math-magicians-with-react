@@ -1,13 +1,13 @@
 # Math-Magicians
 
-"Mathemagician" is a web app for all fans of mathematics. It is a Single Page App (SPA) that allows users to make simple calculations and read a random math-related quote.
-
-![screenshot](./Images/Screen-shoot-3.PNG)
+"Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) consisting of 3 pages: Home, Calculator, and Quote that allows users to:
+- Make simple calculations
+- Read a math-related quote
+- see instructions to use in homepage
 
 ## Live Demo
 
 - [Live link](https://calculator-math-magician.netlify.app/).
-
 
 ### Features implemented so far are:
 
@@ -37,6 +37,11 @@ The basic requirements for building the executable are:
 git clone  git@github.com:samiullahbahadur/Math-magicians.git <Your-Build-Directory>
 ```
 
+```
+cd <Your-Build-Directory> 
+
+```
+
 ## Getting packages and dependencies
 
 To get all package modules required to build the project run:
@@ -64,15 +69,26 @@ To run the program on a browser through a server run this command in your cli
 ```
 npm start
 ```
-
 This should open the page in your localhost on port 3000. then you'd be able to view the built page generated using webpack.
 
+### Run tests
 
-👤 **Author**
+To run the test just use the following command!
+
+```bash
+$ npm test
+```
+
+👤 **samiullahbahadu**
 
 - GitHub: [@Samiullah Bahadur](https://github.com/samiullahbahadur)
 - Twitter: [@Samiullah Bahadur](https://twitter.com/Samiull88496331)
 - LinkedIn: [@Samiullah Bahadur](https://www.linkedin.com/in/samiullah-bahadur-a1b053149/)
+
+👤 **Okoroji Victor aka Vickymarz**
+
+- GitHub: [@githubhandle](https://github.com/vickymarz)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/okoroji-victor-ebube-8791741a0)
 
 ## Show your support
 
@@ -81,7 +97,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Microverse
-- My coding partners(@usorfaitheloho)
+- My coding partners(@Vickymarz)
 
 ## 📝 License
 

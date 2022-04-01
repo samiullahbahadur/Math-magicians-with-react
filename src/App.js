@@ -1,24 +1,27 @@
-import React, { PureComponent } from 'react';
-import './assets/App.css';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import './App.css';
 import Calculator from './components/Calculator';
-import Header from './components/Header';
-import Quote from './components/Quote';
+import NavBar from './components/NavBar';
 import Home from './components/Home';
+import Quote from './components/Quote';
 
-class App extends PureComponent {
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
-      <>
-        <Header />
-        <Routes className="content">
-          <Route path="/" element={<Home className="content" />} />
-          <Route path="calculator" element={<Calculator />} />
-          <Route path="quote" element={<Quote />} />
+      <div className="App">
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Calculator" element={<Calculator />} />
+          <Route path="/Quote" element={<Quote />} />
         </Routes>
-      </>
+      </div>
     );
   }
 }
-
-export default App;
