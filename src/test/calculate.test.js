@@ -1,6 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import calculate from '../logic/calculate';
-import Calculator from '../components/Calculator';
 
 describe('operate function check', () => {
   test('AC', () => {
@@ -53,16 +52,5 @@ describe('operate function check', () => {
 
     const state = calculate(obj, '+/-');
     expect(state.total).toBe('-50');
-  });
-  test('Expects 10 + 10 to equal 20', () => {
-    const { container } = render(<Calculator />);
-    fireEvent.click(container.querySelector('.ac'));
-    fireEvent.click(screen.getByText('1'));
-    fireEvent.click(screen.getByText('0'));
-    fireEvent.click(screen.getByText('+'));
-    fireEvent.click(screen.getByText('1'));
-    fireEvent.click(screen.getByText('0'));
-    fireEvent.click(screen.getByText('='));
-    expect(container.querySelector('.result').innerHTML).toBe('20');
   });
 });
