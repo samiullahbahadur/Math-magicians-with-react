@@ -18,7 +18,7 @@ export default function Calculator() {
           {state.next}
         </div>
         <div className="keyboard">
-          <button type="button" onClick={handler} className="gray">AC</button>
+          <button type="button" onClick={handler} className="gray ac">AC</button>
           <button type="button" onClick={handler} className="gray">+/-</button>
           <button type="button" onClick={handler} className="gray">%</button>
           <button type="button" onClick={handler} className="orange">÷</button>
