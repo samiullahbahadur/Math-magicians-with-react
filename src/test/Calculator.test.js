@@ -8,13 +8,13 @@ it('renders correctly', () => {
 });
 
 it('Expects 10 + 10 to equal 20', () => {
-  const tree = render(<Calculator />);
-  fireEvent.click(tree.querySelector('.ac'));
+  render(<Calculator />);
+  fireEvent.click(screen.getByText('AC'));
   fireEvent.click(screen.getByText('1'));
   fireEvent.click(screen.getByText('0'));
   fireEvent.click(screen.getByText('+'));
   fireEvent.click(screen.getByText('1'));
   fireEvent.click(screen.getByText('0'));
   fireEvent.click(screen.getByText('='));
-  expect(tree.querySelector('.result').innerHTML).toBe('20');
+  expect(screen.getByRole('.result').innerHTML).toBe('20');
 });
