@@ -110,7 +110,7 @@ const Calculator = () => {
           )}
         </div>
 
-        <button type="button" className="btn light-gray" onClick={reset}>
+        <button type="button" className="btn light-gray ac" onClick={reset}>
           AC
         </button>
         <button type="button" className="btn light-gray" onClick={minusPlus}>
