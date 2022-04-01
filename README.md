@@ -69,6 +69,7 @@ To run the program on a browser through a server run this command in your cli
 ```
 npm start
 ```
+This should open the page in your localhost on port 3000. then you'd be able to view the built page generated using webpack.
 
 ### Run tests
 
@@ -77,9 +78,6 @@ To run the test just use the following command!
 ```bash
 $ npm test
 ```
-
-
-This should open the page in your localhost on port 3000. then you'd be able to view the built page generated using webpack.
 
 👤 **samiullahbahadu**
 
