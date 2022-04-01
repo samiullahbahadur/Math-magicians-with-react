@@ -69,6 +69,9 @@ npm start
 
 ## Run tests
 
+Launches the test runner in the interactive watch mode.
+See the section about [running tests](https://create-react-app.dev/docs/running-tests/) for more information.
+
 For tracking linters errors locally, you need to follow these steps:
 
 - For tracking linter errors in CSS file run:
@@ -80,8 +83,6 @@ npx stylelint "**/*.{css,scss}"
 npx eslint .
 ```
 
-Launches the test runner in the interactive watch mode.
-See the section about [running tests](https://create-react-app.dev/docs/running-tests/) for more information.
 
 This should open the page in your localhost on port 3000. then you'd be able to view the built page generated using webpack.
 
