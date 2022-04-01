@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import calculate from '../logic/calculate';
 import Calculator from '../components/Calculator';
+
 describe('operate function check', () => {
   test('AC', () => {
     const obj = {
@@ -55,11 +56,7 @@ describe('operate function check', () => {
   });
   
   test('Expects 10 + 10 to equal 20', () => {
-    const obj = {
-      total: 0,
-      operation: null,
-      next: null,
-    };
+ 
     const { container } = render(<Calculator />);
     fireEvent.click(container.querySelector('.ac'));
     fireEvent.click(screen.getByText('1'));
@@ -71,5 +68,3 @@ describe('operate function check', () => {
     expect(container.querySelector('.result').innerHTML).toBe('20');
   });
 });
-
-
