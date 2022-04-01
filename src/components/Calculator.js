@@ -12,7 +12,7 @@ export default function Calculator() {
     <section className="layout">
       <h2>Lets do some math!</h2>
       <div className="skeleton">
-        <div className="screen" role="result">
+        <div className="screen" role="none">
           {state.total}
           {state.operation}
           {state.next}
