@@ -34,6 +34,11 @@ The basic requirements for building the executable are:
 git clone  git@github.com:samiullahbahadur/Math-magicians.git <Your-Build-Directory>
 ```
 
+```
+cd <Your-Build-Directory> 
+
+```
+
 ## Getting packages and dependencies
 
 To get all package modules required to build the project run:
@@ -61,6 +66,22 @@ To run the program on a browser through a server run this command in your cli
 ```
 npm start
 ```
+
+## Run tests
+
+For tracking linters errors locally, you need to follow these steps:
+
+- For tracking linter errors in CSS file run:
+``` 
+npx stylelint "**/*.{css,scss}"
+```
+- For tracking linter errors in Javascript file run:
+```
+npx eslint .
+```
+
+Launches the test runner in the interactive watch mode.
+See the section about [running tests](https://create-react-app.dev/docs/running-tests/) for more information.
 
 This should open the page in your localhost on port 3000. then you'd be able to view the built page generated using webpack.
 
