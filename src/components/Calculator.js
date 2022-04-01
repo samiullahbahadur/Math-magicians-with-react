@@ -12,13 +12,13 @@ export default function Calculator() {
     <section className="layout">
       <h2>Lets do some math!</h2>
       <div className="skeleton">
-        <div className="screen">
+        <div className="screen" role="result">
           {state.total}
           {state.operation}
           {state.next}
         </div>
         <div className="keyboard">
-          <button type="button" onClick={handler} className="gray ac">AC</button>
+          <button type="button" onClick={handler} className="gray">AC</button>
           <button type="button" onClick={handler} className="gray">+/-</button>
           <button type="button" onClick={handler} className="gray">%</button>
           <button type="button" onClick={handler} className="orange">÷</button>
