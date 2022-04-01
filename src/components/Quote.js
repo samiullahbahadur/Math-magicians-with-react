@@ -1,13 +1,13 @@
-import '../assets/pages.css';
+import React from 'react';
 
-const Quote = () => (
-  <div className="qout">
-    <p>
-      Mathematics is not about numbers ,equations, computations,
-      <br />
-      or algorithms: it is about understanding. -Willian Paul Thurston.
-    </p>
-  </div>
-);
-
-export default Quote;
+export default function Quote() {
+  return (
+    <section className="quote">
+      <p>
+        Mathematics is not about numbers, equations, computations, or
+        algorithms: it is about understanding.
+      </p>
+      <p>- William Paul Thurston</p>
+    </section>
+  );
+}

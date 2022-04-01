@@ -2,12 +2,9 @@
 
 "Mathemagician" is a web app for all fans of mathematics. It is a Single Page App (SPA) that allows users to make simple calculations and read a random math-related quote.
 
-![screenshot](./Images/Screen-shoot-3.PNG)
-
 ## Live Demo
 
 - [Live link](https://calculator-math-magician.netlify.app/).
-
 
 ### Features implemented so far are:
 
@@ -66,7 +63,6 @@ npm start
 ```
 
 This should open the page in your localhost on port 3000. then you'd be able to view the built page generated using webpack.
-
 
 👤 **Author**
 
