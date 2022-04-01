@@ -54,7 +54,6 @@ describe('operate function check', () => {
     const state = calculate(obj, '+/-');
     expect(state.total).toBe('-50');
   });
-  
   test('Expects 10 + 10 to equal 20', () => {
     const { container } = render(<Calculator />);
     fireEvent.click(container.querySelector('.ac'));
