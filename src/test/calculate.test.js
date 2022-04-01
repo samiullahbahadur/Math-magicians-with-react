@@ -1,4 +1,3 @@
-import { fireEvent, render, screen } from '@testing-library/react';
 import calculate from '../logic/calculate';
 
 describe('operate function check', () => {
