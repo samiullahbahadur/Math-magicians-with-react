@@ -20,7 +20,7 @@
     "import/no-unresolved": "off",
     "no-shadow": "off",
     "allowedInvalidRoles": "off",
-    "ignoreNonDOM": true
+    "ignoreNonDOM": "on"
   },
   "ignorePatterns": [
     "dist/",
