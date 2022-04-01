@@ -1,7 +1,6 @@
 # Math-Magicians
 
 "Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) consisting of 3 pages: Home, Calculator, and Quote that allows users to:
-
 - Make simple calculations
 - Read a math-related quote
 - see instructions to use in homepage
@@ -71,21 +70,12 @@ To run the program on a browser through a server run this command in your cli
 npm start
 ```
 
-## Run tests
+### Run tests
 
-### Npm tests
-Launches the test runner in the interactive watch mode.
-See the section about [running tests](https://create-react-app.dev/docs/running-tests/) for more information.
+To run the test just use the following command!
 
-For tracking linters errors locally, you need to follow these steps:
-
-- For tracking linter errors in CSS file run:
-``` 
-npx stylelint "**/*.{css,scss}"
-```
-- For tracking linter errors in Javascript file run:
-```
-npx eslint .
+```bash
+$ npm test
 ```
 
 
