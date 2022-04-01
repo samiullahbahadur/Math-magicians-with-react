@@ -16,5 +16,5 @@ it('Expects 10 + 10 to equal 20', () => {
   fireEvent.click(screen.getByText('1'));
   fireEvent.click(screen.getByText('0'));
   fireEvent.click(screen.getByText('='));
-  expect(screen.getByRole('.result').innerHTML).toBe('20');
+  expect(screen.getByRole('none').innerHTML).toBe('20');
 });
